@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    private GameObject gameOverObject;
+    public GameObject gameOverObject;
     private void Start()
     {
-        gameOverObject = GameObject.Find("Game Over");
+        gameOverObject = GameObject.Find("GameOver");
         gameOverObject.SetActive(false);
     }
 
@@ -25,6 +25,12 @@ public class GameOver : MonoBehaviour
     public void Retry()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void quitGame()
+    {
+        Application.Quit();
+        Debug.Log("quitGame");
     }
 
 }
